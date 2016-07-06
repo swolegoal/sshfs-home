@@ -1,7 +1,7 @@
 # sshfs-home
 
-Run the setup.sh script to setup and install this daemon.
+Run the setup.sh script add root to setup and install this daemon.
 
  ---------
- ./setup.sh
+ sudo ./setup.sh
  ---------
