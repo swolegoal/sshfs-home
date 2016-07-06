@@ -2,6 +2,6 @@
 
 Run the setup.sh script to setup and install this daemon.
 
----------
-./setup.sh
----------
+ ---------
+ ./setup.sh
+ ---------
