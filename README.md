@@ -1,5 +1,14 @@
 # sshfs-home
 
+__
+Requirements
+__
+You must have sshfs in order for this daemon to work.
+
+--
+Getting Started
+__
+
 cd into your the code directory
 
  ---------
