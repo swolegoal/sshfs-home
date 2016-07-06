@@ -16,7 +16,10 @@ Run the setup.sh script as root to setup and install this daemon.
 
 `sudo ./setup.sh`
 
-PLEASE NOTE
+Caveats
 -------
-In order for this daemon to work properly, the target user must exist on
-both machines with the same UID and GID.
+- In order for this daemon to work properly, the target user must exist on
+	both machines with the same UID and GID.
+- Certain applications with lock files in `$HOME` will refuse to work with
+	default arguments (e.g. Chromium, et al.)
+
