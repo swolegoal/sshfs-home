@@ -1,0 +1,15 @@
+[Unit]
+Description=Mounts axuak's home
+Wants=network.target
+After=dhcpcd@eno1.service
+Before=lightdm.service
+
+[Service]
+Restart=always
+Type=simple
+User=root
+ExecStart=/usr/local/bin/sshfs-home
+ExecStop=/usr/local/bin/sshfs-home stop
+
+[Install]
+WantedBy=multi-user.target

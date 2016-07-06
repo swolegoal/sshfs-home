@@ -1,0 +1,37 @@
+#!/bin/bash
+
+#Configure these variables before you run the code for your first time.
+remote_path=''
+remote_ip=''
+username=''
+uid=''
+gid=''
+id_file=''
+#Pick any non-empty directory in your mountpoint to test for.
+test_directory=''
+
+if [ $1 ] ; then
+	umount /home/$username
+	exit
+fi
+
+umount /home/$username
+
+rm -rf /home/$username
+
+mkdir /home/$username
+chown -R $username /home/$username
+
+mount $username@"$remote_ip":$remote_path /home/$username -t fuse.sshfs -o user \ 
+-o transform_symlinks -o identityfile=$id_file -o allow_other \ 
+-o default_permissions -o uid=$uid -o gid=$gid -o exec
+status=$?
+
+while [ $status -eq 0 ] ; do
+	sleep 5s
+	status=0
+	ls $test_directory
+	status=$(($status+$?))
+done
+
+umount /home/$username
