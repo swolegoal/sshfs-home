@@ -22,4 +22,3 @@ Caveats
 	both machines with the same UID and GID.
 - Certain applications with lock files in `$HOME` will refuse to work with
 	default arguments (e.g. Chromium, et al.)
-
